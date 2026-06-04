@@ -25,7 +25,7 @@ class Product(models.Model):   # اصلاح شد Pruduct → Product
     description = models.CharField(max_length=500, default='', blank=True, null=True)
     price = models.DecimalField(default=0, decimal_places=2, max_digits=12)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
-    picture = models.ImageField(upload_to='upload/product/')
+    picture = models.ImageField(upload_to='products/')
 
     def __str__(self):
         return self.name_product   # اصلاح شد (قبلاً اشتباه بود)

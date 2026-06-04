@@ -1,4 +1,6 @@
 {% load static %}
+<p>{{ item.picture }}</p>
+<p>{{ item.picture.url }}</p>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -61,14 +63,18 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="{{ item.picture.url }}" alt="..." />
+                            <img class="card-img-top" 
+                            src="{{ item.picture.url }}"
+                            alt="{{ item.name_product }}" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">{{ item.name_product }}</h5>
                                     <!-- Product price-->
-                                    {{ item.price }}تومان
+                                    <!-- در دسته {{ item.category }}<br> -->
+                                    {{ item.description }}<br>
+                                    {{ item.price|floatformat:0 }} تومان
                                 </div>
                             </div>
                             <!-- Product actions-->

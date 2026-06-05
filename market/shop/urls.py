@@ -1,15 +1,10 @@
-
-# from django.urls import path , include
-# from . import views
 from django.urls import path
-from .views import product_list , about
+from . import views
 
-# urlpatterns = [
-    
-#     path('' , include('shop.urls')),
-#  ]
 urlpatterns = [
-    path('', product_list , name="home"),
-    # path('', product_detail),
-    path('/about/' , about , name="about"),
-]
+    path('', views.product_list, name='home'),       # صفحه اصلی
+    path('about/', views.about, name='about'),       # صفحه درباره ما
+    # path('product/<int:pk>/', views.product_detail, name='product_detail'),  # جزئیات محصول
+    path('login/', views.login_user, name='login'), 
+    path('logout', views.logout_user, name='logout'), 
+ ]

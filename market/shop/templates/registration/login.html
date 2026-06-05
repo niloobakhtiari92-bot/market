@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+.login-page{
+    min-height: 80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-card{
+    width:100%;
+    max-width:450px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+</style>
+
+<div class="login-page">
+    <div class="login-card">
+
+        <h2 class="text-center mb-4">ورود به حساب کاربری</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary w-100">
+                ورود
+            </button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
